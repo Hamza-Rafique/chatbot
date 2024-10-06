@@ -1,6 +1,4 @@
 import random
-import numpy as np
-import nltk
 from tensorflow.keras.models import load_model
 from nltk.stem import WordNetLemmatizer
 import json

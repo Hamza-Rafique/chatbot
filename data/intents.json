@@ -1,20 +1,317 @@
 {
-    "intents": [
-      {
-        "tag": "greeting",
-        "patterns": ["Hi", "Hello", "How are you?", "Is anyone there?"],
-        "responses": ["Hello!", "Hi!", "Greetings!", "How can I assist you?"]
-      },
-      {
-        "tag": "goodbye",
-        "patterns": ["Bye", "See you later", "Goodbye"],
-        "responses": ["Goodbye!", "See you later!", "Have a great day!"]
-      },
-      {
-        "tag": "thanks",
-        "patterns": ["Thanks", "Thank you", "That's helpful"],
-        "responses": ["You're welcome!", "Happy to help!"]
-      }
-    ]
-  }
-  
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "How are you?",
+        "Is anyone there?",
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Hey",
+        "What's up?",
+        "Howdy"
+      ],
+      "responses": [
+        "Hello!",
+        "Hi!",
+        "Greetings!",
+        "How can I assist you?",
+        "Nice to meet you!",
+        "Good to see you again!",
+        "Hey, how's it going?",
+        "Howdy!"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye",
+        "Have a nice day",
+        "Talk to you later",
+        "Catch you later",
+        "I'm leaving",
+        "Peace out",
+        "Farewell"
+      ],
+      "responses": [
+        "Goodbye!",
+        "See you later!",
+        "Have a great day!",
+        "Take care!",
+        "Until next time!",
+        "Peace!",
+        "Farewell!",
+        "See you soon!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "You're awesome",
+        "I appreciate it",
+        "Much appreciated",
+        "Thanks a lot",
+        "Thanks so much"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help!",
+        "Don't mention it!",
+        "No problem!",
+        "Glad I could assist.",
+        "My pleasure!",
+        "Anytime!",
+        "You're too kind!"
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "Help me",
+        "I need help",
+        "Can you help me?",
+        "I'm stuck",
+        "I have a question",
+        "Assist me",
+        "Need assistance",
+        "Can you assist?",
+        "I'm confused"
+      ],
+      "responses": [
+        "How can I help you today?",
+        "What can I do for you?",
+        "Feel free to ask your question.",
+        "I'm here to assist you.",
+        "Let's work on it together.",
+        "I'm ready to help!",
+        "Sure, how can I assist?",
+        "What's troubling you?"
+      ]
+    },
+    {
+      "tag": "weather",
+      "patterns": [
+        "What's the weather like?",
+        "Is it raining today?",
+        "How's the temperature?",
+        "Will it be sunny tomorrow?",
+        "Weather forecast",
+        "Is it cold outside?",
+        "What's the weather report?",
+        "Is it hot today?"
+      ],
+      "responses": [
+        "The weather today is ...",
+        "It's currently ... degrees outside.",
+        "There's a chance of ... precipitation.",
+        "The forecast for tomorrow is ...",
+        "Expect a high of ... and a low of ... today.",
+        "It's going to be ... all day."
+      ]
+    },
+    {
+      "tag": "joke",
+      "patterns": [
+        "Tell me a joke",
+        "I need a laugh",
+        "Funny story",
+        "Crack a joke",
+        "Make me laugh",
+        "Say something funny",
+        "Got any jokes?",
+        "Cheer me up"
+      ],
+      "responses": [
+        "Sure, here's a joke:",
+        "I'm not sure if this is funny, but ...",
+        "A man walks into a bar ...",
+        "Knock, knock. Who's there? ...",
+        "Why did the chicken cross the road? ...",
+        "Want to hear a bad joke? Here it goes ..."
+      ]
+    },
+    {
+      "tag": "affirmation",
+      "patterns": [
+        "Yes",
+        "Sure",
+        "Of course",
+        "Definitely",
+        "Absolutely",
+        "Why not?",
+        "Certainly",
+        "Agreed",
+        "Yup"
+      ],
+      "responses": [
+        "Great!",
+        "Alright, let's continue.",
+        "I'm ready when you are.",
+        "Sounds good!",
+        "Perfect!",
+        "Excellent!",
+        "Glad we're on the same page.",
+        "Let's move forward!"
+      ]
+    },
+    {
+      "tag": "negation",
+      "patterns": [
+        "No",
+        "Maybe not",
+        "Never mind",
+        "I'm not sure",
+        "I changed my mind",
+        "I don't think so",
+        "Not now",
+        "Cancel",
+        "Forget it"
+      ],
+      "responses": [
+        "Okay, no problem.",
+        "Is there anything else I can help you with?",
+        "Let's try something else.",
+        "We can always revisit this later.",
+        "No worries, take your time.",
+        "Got it, let's move on."
+      ]
+    },
+    {
+      "tag": "question",
+      "patterns": [
+        "Who",
+        "What",
+        "When",
+        "Where",
+        "Why",
+        "How",
+        "Could you explain",
+        "Can you tell me",
+        "Do you know",
+        "What's the reason for"
+      ],
+      "responses": [
+        "I'm happy to answer your question. Please go ahead.",
+        "What would you like to know?",
+        "Feel free to ask your question.",
+        "I'll do my best to provide an answer.",
+        "I'm ready to help with your question.",
+        "What's on your mind?"
+      ]
+    },
+    {
+      "tag": "information",
+      "patterns": [
+        "Tell me about",
+        "Can you explain",
+        "What is",
+        "What do you know about",
+        "Give me information on",
+        "Could you provide details on",
+        "I'd like to learn about",
+        "Explain to me"
+      ],
+      "responses": [
+        "I'd be happy to provide some information. What would you like to know?",
+        "Let's explore that topic. What are you interested in?",
+        "I can search for information on that. Please specify your query.",
+        "Let me know what you'd like to learn, and I'll help."
+      ]
+    },
+    {
+      "tag": "order_status",
+      "patterns": [
+        "What's the status of my order?",
+        "Track my order",
+        "How's my order doing?",
+        "Order status",
+        "Where's my package?",
+        "Has my order shipped?",
+        "Is my delivery on the way?"
+      ],
+      "responses": [
+        "Let me check the status of your order.",
+        "Your order is currently being processed.",
+        "It looks like your package is on the way.",
+        "You should receive your order by ...",
+        "I'll track the order for you right away."
+      ]
+    },
+    {
+      "tag": "payment",
+      "patterns": [
+        "How can I pay?",
+        "What payment methods do you accept?",
+        "Is payment secure?",
+        "Can I use a credit card?",
+        "Do you take PayPal?",
+        "Payment options"
+      ],
+      "responses": [
+        "We accept various payment methods such as credit cards, PayPal, and more.",
+        "Payment is secure and can be done via credit card or other methods.",
+        "Feel free to choose your preferred payment method.",
+        "Yes, we do accept PayPal."
+      ]
+    },
+    {
+      "tag": "refund",
+      "patterns": [
+        "Can I get a refund?",
+        "What's your refund policy?",
+        "I want to return my product",
+        "How do refunds work?",
+        "Can I return an item?",
+        "Refund process"
+      ],
+      "responses": [
+        "You can request a refund within ... days.",
+        "Our refund policy allows returns and refunds under specific conditions.",
+        "Let me guide you through the refund process.",
+        "You can return your product for a refund by following these steps."
+      ]
+    },
+    {
+      "tag": "appointment",
+      "patterns": [
+        "I'd like to book an appointment",
+        "Schedule a meeting",
+        "Can I book a session?",
+        "How can I set an appointment?",
+        "Appointment availability",
+        "I'd like to arrange a meeting"
+      ],
+      "responses": [
+        "Let me help you schedule an appointment.",
+        "Please provide your preferred date and time for the appointment.",
+        "I'll check the availability and schedule it for you.",
+        "You can book an appointment by following these steps."
+      ]
+    },
+    {
+      "tag": "services",
+      "patterns": [
+        "What services do you offer?",
+        "Tell me about your services",
+        "What can you do?",
+        "What kind of services are available?",
+        "Services provided",
+        "Explain your service options"
+      ],
+      "responses": [
+        "We offer a variety of services including ...",
+        "Here's a list of the services we provide.",
+        "Our main services include ...",
+        "Let me provide more details about our services."
+      ]
+    }
+  ]
+}

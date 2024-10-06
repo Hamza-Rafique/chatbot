@@ -1,3 +1,5 @@
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 import random
 import numpy as np
 import nltk
@@ -6,11 +8,13 @@ from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import tokenizer_from_json
 import json
-import os
+
+
+app = Flask(__name__)
+CORS(app) 
 
 lemmatizer = WordNetLemmatizer()
 
-# Load trained model
 model = load_model('models/chatbot_model.h5')
 
 # Load intents
@@ -52,21 +56,16 @@ def get_response(intent_tag):
             return random.choice(intent['responses'])
     return "Sorry, I don't understand that."
 
-def chatbot_response(msg):
-    """Generates a response from the chatbot."""
-    intent_tag = predict_class(msg)
-    return get_response(intent_tag)
-
+@app.route('/chat', methods=['POST'])
 def chat():
-    """Starts the chatbot conversation."""
-    print("Start chatting with the bot (type 'quit' to stop)!")
-    while True:
-        msg = input("You: ")
-        if msg.lower() == "quit":
-            print("Goodbye!")
-            break
-        response = chatbot_response(msg)
-        print(f"Bot: {response}")
+    """Handles the POST request for chatbot communication."""
+    user_input = request.json.get("message")
+    if user_input:
+        intent_tag = predict_class(user_input)
+        response = get_response(intent_tag)
+        return jsonify({"response": response})
+    else:
+        return jsonify({"error": "No message provided"}), 400
 
-if __name__ == "__main__":
-    chat()
+if __name__ == '__main__':
+    app.run(debug=True)

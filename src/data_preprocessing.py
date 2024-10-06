@@ -1,8 +1,5 @@
 import json
 import nltk
-import numpy as np
-from sklearn.preprocessing import LabelEncoder
-
 nltk.download('punkt')
 from nltk.stem import WordNetLemmatizer
 
@@ -31,3 +28,9 @@ def preprocess_data(intents_file):
     classes = sorted(list(set(classes)))
 
     return documents, words, classes
+
+if __name__ == "__main__":
+    documents, words, classes = preprocess_data('data/intents.json')
+    print(f"Documents: {documents[:5]}")  # Print sample documents
+    print(f"Words: {words[:5]}")          # Print sample words
+    print(f"Classes: {classes}")          # Print classes

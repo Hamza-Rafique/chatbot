@@ -35,7 +35,7 @@ This chatbot is designed to simulate human-like conversations using AI. It's bui
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/chatbot-app.git
+   git clone https://github.com/Hamza-Rafique/chatbot.git
 ```
 2.  **Backend Setup (Flask API)**
 3. **Frontend Setup (ReactJS App)**
